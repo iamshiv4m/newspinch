@@ -1,0 +1,16 @@
+{
+  "name": "News Pinch",
+  "short_name": "NewsPinch",
+  "description": "An AI-powered, creator-led news network — credible, fast, and trusted by millions across India's digital platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f0",
+  "theme_color": "#1a237e",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "139x134",
+      "type": "image/png"
+    }
+  ]
+}

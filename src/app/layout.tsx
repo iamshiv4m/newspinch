@@ -27,7 +27,27 @@ export const metadata: Metadata = {
   },
   description:
     "An AI-powered, creator-led news network — credible, fast, and trusted by millions across India's digital platforms.",
+  keywords: [
+    "News Pinch",
+    "Indian news",
+    "AI news",
+    "digital news India",
+    "creator-led journalism",
+    "ground reports India",
+    "Hindi news",
+    "AI-powered news",
+    "fact-checked news",
+  ],
+  authors: [
+    { name: "Abhinav Pandey" },
+    { name: "Saurabh Tripathi" },
+  ],
+  creator: "NewsPinch Network Pvt. Ltd.",
+  publisher: "NewsPinch Network Pvt. Ltd.",
   metadataBase: new URL("https://newspinch.in"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -35,15 +55,68 @@ export const metadata: Metadata = {
     title: "News Pinch — Objectivity for citizens, powered by AI",
     description:
       "An AI-powered, creator-led news network — credible, fast, and trusted by millions across India's digital platforms.",
+    url: "https://newspinch.in",
   },
   twitter: {
     card: "summary_large_image",
     site: "@thenewspinch",
+    creator: "@thenewspinch",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  verification: {
+    google: "verification-code-here",
+  },
+  category: "News",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  name: "News Pinch",
+  alternateName: "NewsPinch",
+  url: "https://newspinch.in",
+  logo: "https://newspinch.in/images/logo.png",
+  description:
+    "An AI-powered, creator-led news network — credible, fast, and trusted by millions across India's digital platforms.",
+  foundingDate: "2025-08-11",
+  founders: [
+    { "@type": "Person", name: "Abhinav Pandey" },
+    { "@type": "Person", name: "Saurabh Tripathi" },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Noida",
+    addressRegion: "Uttar Pradesh",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://www.youtube.com/@TheNewsPinch",
+    "https://www.instagram.com/thenewspinch/",
+    "https://www.facebook.com/thenewspinch/",
+    "https://x.com/thenewspinch",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "Business",
+      email: "business@newspinch.in",
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "Editorial",
+      email: "thenewspinch@gmail.com",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -53,6 +126,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1a237e" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
       <body className="min-h-screen flex flex-col antialiased">
         <SmoothScroll />
         <Navbar />

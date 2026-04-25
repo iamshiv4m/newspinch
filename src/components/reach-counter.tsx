@@ -10,26 +10,26 @@ export function ReachCounter() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
-      className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 sm:p-10"
+      className="rounded-2xl bg-gradient-to-br from-np-blue to-np-blue-dark border-2 border-np-yellow p-6 sm:p-8 shadow-[0_6px_0_0] shadow-np-yellow/30 text-white"
     >
-      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-np-yellow/80 mb-8">
+      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-np-yellow mb-6 text-center">
         Reach Counter
       </h3>
-      <div className="grid grid-cols-2 gap-8">
-        <div>
-          <Eye size={20} className="text-np-yellow/60 mb-3" />
-          <div className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">{siteConfig.stats.views}</div>
-          <div className="text-xs uppercase tracking-widest text-white/30 mt-2">Views</div>
+      <div className="grid grid-cols-2 gap-6">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-widest text-np-yellow/70 mb-2">Views</p>
+          <div className="bg-black/40 rounded-lg py-2 px-3 border border-np-yellow/30">
+            <span className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-np-yellow">{siteConfig.stats.views}</span>
+          </div>
         </div>
-        <div>
-          <Users size={20} className="text-np-yellow/60 mb-3" />
-          <div className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">{siteConfig.stats.community}</div>
-          <div className="text-xs uppercase tracking-widest text-white/30 mt-2">Community</div>
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-widest text-np-yellow/70 mb-2">Community</p>
+          <div className="bg-black/40 rounded-lg py-2 px-3 border border-np-yellow/30">
+            <span className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-np-yellow">{siteConfig.stats.community}</span>
+          </div>
         </div>
       </div>
-      <div className="mt-8 pt-4 border-t border-white/5">
-        <p className="text-xs text-white/25">Data aggregated from all platforms</p>
-      </div>
+      <p className="text-center text-xs text-np-yellow/50 mt-5">Data from all platforms</p>
     </motion.div>
   );
 }
