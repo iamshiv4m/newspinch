@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Play, Sparkles, Search } from "lucide-react";
+import { ArrowRight, Sparkles, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ArticleThumbnail } from "@/components/article-thumbnail";
 import { articles, categories } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -67,9 +68,7 @@ export default function NewsPage() {
           <Link href={`/news/${articles[0].category.toLowerCase().replace(/\s+/g, '-')}/${articles[0].slug}`}>
             <Card className="mb-8 overflow-hidden hover:shadow-lg transition-all group">
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="h-64 md:h-auto bg-gradient-to-br from-np-blue/10 to-np-blue/5 flex items-center justify-center">
-                  <Play size={64} className="text-np-blue/20 group-hover:text-np-blue/40 transition-colors" />
-                </div>
+                <ArticleThumbnail size="hero" />
                 <CardContent className="p-6 sm:p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-3">
                     <Badge variant="category">{articles[0].category}</Badge>
@@ -96,9 +95,7 @@ export default function NewsPage() {
             {articles.slice(1).map((article) => (
               <Link key={article.id} href={`/news/${article.category.toLowerCase().replace(/\s+/g, '-')}/${article.slug}`}>
                 <Card className="h-full hover:shadow-lg transition-all hover:-translate-y-1 group overflow-hidden">
-                  <div className="h-48 bg-gradient-to-br from-np-blue/10 to-np-blue/5 flex items-center justify-center">
-                    <Play size={40} className="text-np-blue/20 group-hover:text-np-blue/40 transition-colors" />
-                  </div>
+                  <ArticleThumbnail size="md" />
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <Badge variant="category">{article.category}</Badge>

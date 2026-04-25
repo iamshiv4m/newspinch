@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Play, Sparkles, TrendingUp, Users, Eye, ChevronRight } from "lucide-react";
+import { ArrowRight, Sparkles, TrendingUp, Users, Eye, ChevronRight } from "lucide-react";
+import { ArticleThumbnail } from "@/components/article-thumbnail";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
@@ -59,10 +60,8 @@ export default function HomePage() {
           <ScaleOnScroll>
             <Link href={`/news/${featuredArticle.category.toLowerCase().replace(/\s+/g, '-')}/${featuredArticle.slug}`} className="block mb-8">
               <div className="group relative rounded-2xl overflow-hidden bg-np-blue-dark h-[320px] sm:h-[400px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-np-blue-dark via-np-blue-dark/60 to-transparent z-10" />
-                <div className="absolute inset-0 bg-np-blue/30 flex items-center justify-center">
-                  <Play size={80} className="text-white/10" />
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-np-blue-dark via-np-blue-dark/60 to-transparent z-10" />
+              <ArticleThumbnail size="hero" className="absolute inset-0" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-20">
                   <div className="flex items-center gap-2 mb-3">
                     <Badge variant="category">{featuredArticle.category}</Badge>
@@ -85,9 +84,7 @@ export default function HomePage() {
               <StaggerItem key={article.id}>
                 <Link href={`/news/${article.category.toLowerCase().replace(/\s+/g, '-')}/${article.slug}`}>
                   <article className="group">
-                    <div className="rounded-xl bg-gradient-to-br from-np-blue/5 to-np-blue/10 h-44 flex items-center justify-center mb-3 overflow-hidden">
-                      <Play size={28} className="text-np-blue/15 group-hover:text-np-blue/30 group-hover:scale-125 transition-all duration-500" />
-                    </div>
+                    <ArticleThumbnail size="lg" className="rounded-xl mb-3" />
                     <div className="flex items-center gap-2 mb-1.5">
                       <Badge variant="category">{article.category}</Badge>
                       {article.aiAssisted && <Badge variant="ai"><Sparkles size={10} /> AI</Badge>}

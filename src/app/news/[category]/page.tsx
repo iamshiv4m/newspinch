@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Play, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ArticleThumbnail } from "@/components/article-thumbnail";
 import { articles, categories } from "@/lib/data";
 import { notFound } from "next/navigation";
 
@@ -53,9 +54,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
               {categoryArticles.map((article) => (
                 <Link key={article.id} href={`/news/${category}/${article.slug}`}>
                   <Card className="h-full hover:shadow-lg transition-all hover:-translate-y-1 group overflow-hidden">
-                    <div className="h-48 bg-gradient-to-br from-np-blue/10 to-np-blue/5 flex items-center justify-center">
-                      <Play size={40} className="text-np-blue/20 group-hover:text-np-blue/40 transition-colors" />
-                    </div>
+                    <ArticleThumbnail size="md" />
                     <CardContent className="p-5">
                       <div className="flex items-center gap-2 mb-3">
                         <Badge variant="category">{article.category}</Badge>
