@@ -75,4 +75,10 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  .story-section {
+    min-height: 100svh;
+    position: relative;
+    overflow: hidden;
+  }
 }
