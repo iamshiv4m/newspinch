@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-np-blue: #1a237e;
+  --color-np-blue-light: #283593;
+  --color-np-blue-dark: #0d1642;
+  --color-np-yellow: #ffc107;
+  --color-np-yellow-light: #ffca28;
+  --color-np-yellow-dark: #f9a825;
+  --color-np-red: #d32f2f;
+  --color-np-bg: #f5f5f0;
+  --color-np-white: #ffffff;
+  --color-np-gray-100: #f8f8f8;
+  --color-np-gray-200: #e8e8e8;
+  --color-np-gray-300: #d0d0d0;
+  --color-np-gray-500: #888888;
+  --color-np-gray-700: #444444;
+  --color-np-gray-900: #1a1a1a;
+  --font-display: var(--font-poppins);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-np-bg);
+  color: var(--color-np-gray-900);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-np-yellow);
+  color: var(--color-np-blue-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, var(--color-np-blue) 0%, var(--color-np-blue-dark) 100%);
+}
+
+.gradient-yellow {
+  background: linear-gradient(135deg, var(--color-np-yellow) 0%, var(--color-np-yellow-dark) 100%);
+}
