@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/language-provider";
 
 export function FloatingCTA() {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
@@ -17,7 +20,7 @@ export function FloatingCTA() {
         className="group flex items-center gap-2 rounded-full bg-np-yellow pl-5 pr-4 py-3 shadow-lg shadow-np-yellow/25 hover:shadow-xl hover:shadow-np-yellow/30 hover:scale-105 transition-all duration-300"
       >
         <span className="font-display text-sm font-bold text-np-blue-dark whitespace-nowrap">
-          Sponsor with Us
+          {t.common.sponsorCta}
         </span>
         <ArrowUpRight size={16} className="text-np-blue-dark group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
       </Link>

@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import { MapPin, Mail } from "lucide-react";
 import { YoutubeIcon, InstagramIcon, FacebookIcon, XIcon } from "@/components/icons";
+import { useLanguage } from "@/components/language-provider";
+
+const navKeys = ["home", "sponsors", "team", "community", "trust", "contact"] as const;
+const navHrefs = ["/", "/sponsors", "/team", "/community", "/trust", "/contact"];
 
 const socialLinks = [
   { icon: YoutubeIcon, href: siteConfig.links.youtube, label: "YouTube" },
@@ -12,6 +18,8 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-np-blue-dark text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -27,17 +35,17 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              {siteConfig.description}
+              {t.hero.description}
             </p>
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">Quick Links</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">{t.footer.quickLinks}</h3>
             <ul className="space-y-3">
-              {siteConfig.nav.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-white/60 hover:text-np-yellow transition-colors">
-                    {item.label}
+              {navKeys.map((key, i) => (
+                <li key={key}>
+                  <Link href={navHrefs[i]} className="text-sm text-white/60 hover:text-np-yellow transition-colors">
+                    {t.nav[key]}
                   </Link>
                 </li>
               ))}
@@ -45,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">Contact</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">{t.footer.contact}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-white/60">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-np-yellow/70" />
@@ -62,7 +70,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">Follow Us</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">{t.footer.followUs}</h3>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -82,10 +90,10 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} NewsPinch Network Pvt. Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} NewsPinch Network Pvt. Ltd. {t.footer.rights}
           </p>
-          <p className="text-xs text-white/30 flex items-center gap-1">
-            Assisted by AI. Verified by Editors.
+          <p className="text-xs text-white/30">
+            {t.footer.aiTag}
           </p>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
 import { PageTransition } from "@/components/page-transition";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { LanguageProvider } from "@/components/language-provider";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -137,13 +138,15 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
-        <SmoothScroll />
-        <Navbar />
-        <main className="flex-1">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
-        <FloatingCTA />
+        <LanguageProvider>
+          <SmoothScroll />
+          <Navbar />
+          <main className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+          <FloatingCTA />
+        </LanguageProvider>
       </body>
     </html>
   );
