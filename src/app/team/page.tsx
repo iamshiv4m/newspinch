@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Users, Briefcase, MapPin, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -32,8 +33,13 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {teamMembers.map((member) => (
               <Card key={member.name} className="overflow-hidden hover:shadow-lg transition-all">
-                <div className="h-64 bg-gradient-to-br from-np-yellow to-np-yellow-dark flex items-center justify-center">
-                  <Users size={80} className="text-np-blue/20" />
+                <div className="h-72 relative overflow-hidden bg-np-yellow">
+                  <Image
+                    src={`/images/team/${member.name.split(' ')[0].toLowerCase()}.png`}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
                 <CardContent className="p-6 text-center">
                   <h3 className="font-display text-xl font-bold text-np-gray-900">{member.name}</h3>

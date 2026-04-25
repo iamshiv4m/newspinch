@@ -9,19 +9,17 @@ export function FloatingCTA() {
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 1, type: "spring", stiffness: 200 }}
+      transition={{ delay: 1.5, type: "spring", stiffness: 200, damping: 20 }}
       className="fixed bottom-6 left-6 z-50"
     >
       <Link
         href="/sponsors/contact"
-        className="flex h-20 w-20 flex-col items-center justify-center rounded-full bg-np-yellow shadow-lg hover:shadow-xl hover:scale-105 transition-all group"
+        className="group flex items-center gap-2 rounded-full bg-np-yellow pl-5 pr-4 py-3 shadow-lg shadow-np-yellow/25 hover:shadow-xl hover:shadow-np-yellow/30 hover:scale-105 transition-all duration-300"
       >
-        <span className="font-display text-xs font-bold text-np-blue-dark leading-tight text-center">
-          Sponsor
-          <br />
-          with Us
+        <span className="font-display text-sm font-bold text-np-blue-dark whitespace-nowrap">
+          Sponsor with Us
         </span>
-        <ArrowUpRight size={14} className="text-np-red mt-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        <ArrowUpRight size={16} className="text-np-blue-dark group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
       </Link>
     </motion.div>
   );

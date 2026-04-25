@@ -9,31 +9,27 @@ export function ReachCounter() {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3, duration: 0.6 }}
-      className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg p-8"
+      transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
+      className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 sm:p-10"
     >
-      <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-np-yellow mb-6">
+      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-np-yellow/80 mb-8">
         Reach Counter
       </h3>
       <div className="grid grid-cols-2 gap-8">
-        <div className="text-center">
-          <Eye size={32} className="mx-auto mb-2 text-np-yellow" />
-          <div className="font-display text-4xl sm:text-5xl font-bold">
-            {siteConfig.stats.views}
-          </div>
-          <div className="text-sm text-white/60 mt-1">Views</div>
+        <div>
+          <Eye size={20} className="text-np-yellow/60 mb-3" />
+          <div className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">{siteConfig.stats.views}</div>
+          <div className="text-xs uppercase tracking-widest text-white/30 mt-2">Views</div>
         </div>
-        <div className="text-center">
-          <Users size={32} className="mx-auto mb-2 text-np-yellow" />
-          <div className="font-display text-4xl sm:text-5xl font-bold">
-            {siteConfig.stats.community}
-          </div>
-          <div className="text-sm text-white/60 mt-1">Community</div>
+        <div>
+          <Users size={20} className="text-np-yellow/60 mb-3" />
+          <div className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">{siteConfig.stats.community}</div>
+          <div className="text-xs uppercase tracking-widest text-white/30 mt-2">Community</div>
         </div>
       </div>
-      <p className="text-center text-xs text-white/40 mt-6">
-        Data from all platforms
-      </p>
+      <div className="mt-8 pt-4 border-t border-white/5">
+        <p className="text-xs text-white/25">Data aggregated from all platforms</p>
+      </div>
     </motion.div>
   );
 }

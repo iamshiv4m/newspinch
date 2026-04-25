@@ -36,6 +36,11 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display), system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
@@ -46,5 +51,28 @@
 
   .gradient-yellow {
     background: linear-gradient(135deg, var(--color-np-yellow) 0%, var(--color-np-yellow-dark) 100%);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

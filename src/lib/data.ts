@@ -106,13 +106,13 @@ export const teamMembers = [
     name: "Abhinav Pandey",
     role: "Co-Founder & Editor-in-Chief",
     bio: "Journalist and technologist with 8+ years in digital media. Previously at leading Indian news platforms.",
-    image: "/team/abhinav.jpg",
+    image: "/images/team/abhinav.png",
   },
   {
     name: "Saurabh Tripathi",
     role: "Co-Founder & Head of Content",
     bio: "Creator and storyteller who believes in ground-level journalism. Built communities across 5+ digital platforms.",
-    image: "/team/saurabh.jpg",
+    image: "/images/team/saurabh.png",
   },
 ];
 

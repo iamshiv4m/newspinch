@@ -24,12 +24,12 @@ export const siteConfig = {
     {
       name: "Abhinav Pandey",
       role: "Co-Founder",
-      image: "/team/abhinav.jpg",
+      image: "/images/team/abhinav.png",
     },
     {
       name: "Saurabh Tripathi",
       role: "Co-Founder",
-      image: "/team/saurabh.jpg",
+      image: "/images/team/saurabh.png",
     },
   ],
   nav: [
