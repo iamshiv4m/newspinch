@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, type Variant } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 interface RevealProps {
@@ -9,14 +9,13 @@ interface RevealProps {
   delay?: number;
   direction?: "up" | "down" | "left" | "right" | "none";
   duration?: number;
-  once?: boolean;
 }
 
-const directionMap: Record<string, { x?: number; y?: number }> = {
-  up: { y: 60 },
-  down: { y: -60 },
-  left: { x: 60 },
-  right: { x: -60 },
+const directionOffset: Record<string, { x?: number; y?: number }> = {
+  up: { y: 40 },
+  down: { y: -40 },
+  left: { x: 40 },
+  right: { x: -40 },
   none: {},
 };
 
@@ -25,95 +24,17 @@ export function Reveal({
   className,
   delay = 0,
   direction = "up",
-  duration = 0.7,
-  once = true,
+  duration = 0.6,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, margin: "-80px" });
-
-  const hidden: Variant = {
-    opacity: 0,
-    filter: "blur(4px)",
-    ...directionMap[direction],
-  };
-
-  const visible: Variant = {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    filter: "blur(0px)",
-  };
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={hidden}
-      animate={isInView ? visible : hidden}
-      transition={{
-        duration,
-        delay,
-        ease: [0.25, 0.4, 0.25, 1],
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-export function TextReveal({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: string;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-  const words = children.split(" ");
-
-  return (
-    <span ref={ref} className={className}>
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-          animate={
-            isInView
-              ? { opacity: 1, y: 0, filter: "blur(0px)" }
-              : { opacity: 0, y: 20, filter: "blur(4px)" }
-          }
-          transition={{
-            duration: 0.5,
-            delay: delay + i * 0.04,
-            ease: [0.25, 0.4, 0.25, 1],
-          }}
-          className="inline-block mr-[0.25em]"
-        >
-          {word}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
-
-export function Parallax({
-  children,
-  className,
-  speed = 0.3,
-}: {
-  children: ReactNode;
-  className?: string;
-  speed?: number;
-}) {
-  return (
-    <motion.div
-      initial={{ y: 0 }}
-      whileInView={{ y: -40 * speed }}
-      viewport={{ once: false, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      initial={{ opacity: 0, ...directionOffset[direction] }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : undefined}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -129,14 +50,14 @@ export function ScaleOnScroll({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+      initial={{ scale: 0.95, opacity: 0 }}
+      animate={isInView ? { scale: 1, opacity: 1 } : undefined}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -154,17 +75,14 @@ export function StaggerChildren({
   staggerDelay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      variants={{
-        visible: { transition: { staggerChildren: staggerDelay } },
-        hidden: {},
-      }}
+      variants={{ visible: { transition: { staggerChildren: staggerDelay } } }}
       className={className}
     >
       {children}
@@ -182,13 +100,8 @@ export function StaggerItem({
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
-        visible: {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] },
-        },
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
       }}
       className={className}
     >
@@ -204,15 +117,15 @@ export function CountUp({
   value: string;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
 
   return (
     <motion.span
       ref={ref}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-      transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={isInView ? { opacity: 1, y: 0 } : undefined}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={className}
     >
       {value}
