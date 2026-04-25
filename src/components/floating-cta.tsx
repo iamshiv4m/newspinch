@@ -22,7 +22,10 @@ export function FloatingCTA() {
         <span className="font-display text-sm font-bold text-np-blue-dark whitespace-nowrap">
           {t.common.sponsorCta}
         </span>
-        <ArrowUpRight size={16} className="text-np-blue-dark group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        <ArrowUpRight
+          size={16}
+          className="text-np-blue-dark group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+        />
       </Link>
     </motion.div>
   );

@@ -6,6 +6,8 @@ import { FloatingCTA } from "@/components/floating-cta";
 import { PageTransition } from "@/components/page-transition";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { LanguageProvider } from "@/components/language-provider";
+import { DateBar } from "@/components/date-bar";
+import { BreakingTicker } from "@/components/breaking-ticker";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -39,10 +41,7 @@ export const metadata: Metadata = {
     "AI-powered news",
     "fact-checked news",
   ],
-  authors: [
-    { name: "Abhinav Pandey" },
-    { name: "Saurabh Tripathi" },
-  ],
+  authors: [{ name: "Abhinav Pandey" }, { name: "Saurabh Tripathi" }],
   creator: "NewsPinch Network Pvt. Ltd.",
   publisher: "NewsPinch Network Pvt. Ltd.",
   metadataBase: new URL("https://newspinch.in"),
@@ -135,11 +134,16 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1a237e" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
         <LanguageProvider>
           <SmoothScroll />
+          <DateBar />
+          <BreakingTicker />
           <Navbar />
           <main className="flex-1">
             <PageTransition>{children}</PageTransition>

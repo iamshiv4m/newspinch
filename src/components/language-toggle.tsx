@@ -21,10 +21,20 @@ export function LanguageToggle({ className }: { className?: string }) {
         animate={{ x: locale === "en" ? 4 : 32 }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
       />
-      <span className={cn("relative z-10 w-8 text-center text-xs font-bold", locale === "en" ? "text-white" : "text-np-gray-500")}>
+      <span
+        className={cn(
+          "relative z-10 w-8 text-center text-xs font-bold",
+          locale === "en" ? "text-white" : "text-np-gray-500",
+        )}
+      >
         EN
       </span>
-      <span className={cn("relative z-10 w-8 text-center text-xs font-bold", locale === "hi" ? "text-white" : "text-np-gray-500")}>
+      <span
+        className={cn(
+          "relative z-10 w-8 text-center text-xs font-bold",
+          locale === "hi" ? "text-white" : "text-np-gray-500",
+        )}
+      >
         हि
       </span>
     </button>

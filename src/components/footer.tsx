@@ -4,11 +4,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import { MapPin, Mail } from "lucide-react";
-import { YoutubeIcon, InstagramIcon, FacebookIcon, XIcon } from "@/components/icons";
+import {
+  YoutubeIcon,
+  InstagramIcon,
+  FacebookIcon,
+  XIcon,
+} from "@/components/icons";
 import { useLanguage } from "@/components/language-provider";
 
-const navKeys = ["home", "sponsors", "team", "community", "trust", "contact"] as const;
-const navHrefs = ["/", "/sponsors", "/team", "/community", "/trust", "/contact"];
+const navKeys = [
+  "home",
+  "sponsors",
+  "team",
+  "community",
+  "trust",
+  "contact",
+] as const;
+const navHrefs = [
+  "/",
+  "/sponsors",
+  "/team",
+  "/community",
+  "/trust",
+  "/contact",
+];
 
 const socialLinks = [
   { icon: YoutubeIcon, href: siteConfig.links.youtube, label: "YouTube" },
@@ -40,11 +59,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">{t.footer.quickLinks}</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">
+              {t.footer.quickLinks}
+            </h3>
             <ul className="space-y-3">
               {navKeys.map((key, i) => (
                 <li key={key}>
-                  <Link href={navHrefs[i]} className="text-sm text-white/60 hover:text-np-yellow transition-colors">
+                  <Link
+                    href={navHrefs[i]}
+                    className="text-sm text-white/60 hover:text-np-yellow transition-colors"
+                  >
                     {t.nav[key]}
                   </Link>
                 </li>
@@ -53,24 +77,33 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">{t.footer.contact}</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">
+              {t.footer.contact}
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-white/60">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-np-yellow/70" />
+                <MapPin
+                  size={16}
+                  className="mt-0.5 shrink-0 text-np-yellow/70"
+                />
                 {siteConfig.address}
               </li>
               <li className="flex items-start gap-3 text-sm text-white/60">
                 <Mail size={16} className="mt-0.5 shrink-0 text-np-yellow/70" />
                 <div>
                   <p>Business: {siteConfig.emails.business}</p>
-                  <p className="mt-1">Editorial: {siteConfig.emails.editorial}</p>
+                  <p className="mt-1">
+                    Editorial: {siteConfig.emails.editorial}
+                  </p>
                 </div>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">{t.footer.followUs}</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-np-yellow mb-5">
+              {t.footer.followUs}
+            </h3>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -90,11 +123,10 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} NewsPinch Network Pvt. Ltd. {t.footer.rights}
+            &copy; {new Date().getFullYear()} NewsPinch Network Pvt. Ltd.{" "}
+            {t.footer.rights}
           </p>
-          <p className="text-xs text-white/30">
-            {t.footer.aiTag}
-          </p>
+          <p className="text-xs text-white/30">{t.footer.aiTag}</p>
         </div>
       </div>
     </footer>

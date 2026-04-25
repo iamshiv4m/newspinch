@@ -34,7 +34,12 @@
     color: var(--color-np-blue-dark);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display), system-ui, sans-serif;
     letter-spacing: -0.01em;
   }
@@ -46,11 +51,19 @@
 
 @layer utilities {
   .gradient-hero {
-    background: linear-gradient(135deg, var(--color-np-blue) 0%, var(--color-np-blue-dark) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-np-blue) 0%,
+      var(--color-np-blue-dark) 100%
+    );
   }
 
   .gradient-yellow {
-    background: linear-gradient(135deg, var(--color-np-yellow) 0%, var(--color-np-yellow-dark) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-np-yellow) 0%,
+      var(--color-np-yellow-dark) 100%
+    );
   }
 
   .scrollbar-hide::-webkit-scrollbar {
@@ -94,15 +107,38 @@
   }
 
   @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
   }
 
   @keyframes spin-slow {
-    to { transform: rotate(360deg); }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   .animate-spin-slow {
     animation: spin-slow 2s linear infinite;
+  }
+
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-ticker {
+    animation: ticker 60s linear infinite;
+  }
+
+  .animate-ticker:hover {
+    animation-play-state: paused;
   }
 }

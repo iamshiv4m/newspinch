@@ -19,7 +19,8 @@ export const translations = {
       line3_2: "AI",
       line4_1: "delivered by",
       line4_2: "creators.",
-      description: "An AI-powered, creator-led news network — credible, fast, and trusted by millions across India's digital platforms.",
+      description:
+        "An AI-powered, creator-led news network — credible, fast, and trusted by millions across India's digital platforms.",
       cta1: "Read Latest News",
       cta2: "Partner With Us",
       foundedBy: "Founded by",
@@ -48,7 +49,8 @@ export const translations = {
     },
     newsletter: {
       title: "Stay Informed, Stay Ahead",
-      description: "Get the top stories delivered to your inbox every morning. No spam, just credible news.",
+      description:
+        "Get the top stories delivered to your inbox every morning. No spam, just credible news.",
       placeholder: "Enter your email",
       subscribe: "Subscribe",
       subscribers: "Join 50,000+ subscribers. Unsubscribe anytime.",
@@ -57,9 +59,11 @@ export const translations = {
     },
     sponsors: {
       title: "Why Partner with",
-      subtitle: "Reach millions of engaged Indians through creator-led, AI-powered journalism that people trust.",
+      subtitle:
+        "Reach millions of engaged Indians through creator-led, AI-powered journalism that people trust.",
       packages: "Sponsorship Packages",
-      packagesDesc: "Choose a package that aligns with your brand goals and budget.",
+      packagesDesc:
+        "Choose a package that aligns with your brand goals and budget.",
       getStarted: "Get Started",
       socialTitle: "Our Social Handles",
       download: "Download Sponsorship Proposal",
@@ -68,7 +72,8 @@ export const translations = {
     team: {
       title: "Meet the",
       titleHighlight: "Team",
-      subtitle: "We're journalists, creators, and technologists reimagining news for a digital-first India.",
+      subtitle:
+        "We're journalists, creators, and technologists reimagining news for a digital-first India.",
       founders: "Founders",
       whyJoin: "Why You Should",
       joinHighlight: "Join Us",
@@ -79,7 +84,8 @@ export const translations = {
     community: {
       title: "Our",
       titleHighlight: "Community",
-      subtitle: "Millions of viewers trust News Pinch for credible, AI-powered, creator-led journalism.",
+      subtitle:
+        "Millions of viewers trust News Pinch for credible, AI-powered, creator-led journalism.",
       mapTitle: "Audience Reach Across India",
       mapHint: "Hover over states to see engagement levels",
       socialTitle: "Follow Us on",
@@ -92,21 +98,26 @@ export const translations = {
     trust: {
       title: "Trust &",
       titleHighlight: "Standards",
-      subtitle: "Our commitment to accuracy, fairness, and transparency in every story we tell.",
+      subtitle:
+        "Our commitment to accuracy, fairness, and transparency in every story we tell.",
       aiBadge: "Assisted by AI. Verified by Editors.",
       aiPolicy: "Our",
       aiPolicyHighlight: "AI Usage Policy",
       corrections: "Public Corrections Log",
-      correctionsDesc: "Transparency is accountability. Here are our recent corrections.",
+      correctionsDesc:
+        "Transparency is accountability. Here are our recent corrections.",
     },
     contact: {
       title: "Get in",
       titleHighlight: "Touch",
-      subtitle: "Have a story tip, want to join our team, or interested in partnering? We'd love to hear from you.",
+      subtitle:
+        "Have a story tip, want to join our team, or interested in partnering? We'd love to hear from you.",
       storyTitle: "Got an Interesting Story?",
-      storyDesc: "If you've got a story that deserves to be heard, share your idea or ground report, and our editorial team will connect with you.",
+      storyDesc:
+        "If you've got a story that deserves to be heard, share your idea or ground report, and our editorial team will connect with you.",
       joinTitle: "Want to Join the Team?",
-      joinDesc: "We're journalists, creators, and technologists reimagining news for a digital-first India.",
+      joinDesc:
+        "We're journalists, creators, and technologists reimagining news for a digital-first India.",
       workWithUs: "Work with Us",
       submitPitch: "Submit Story Pitch",
       infoTitle: "Contact",
@@ -122,14 +133,64 @@ export const translations = {
     common: {
       loading: "Loading",
       error: "Something Went Wrong",
-      errorDesc: "We encountered an unexpected error. Our team has been notified and is working on a fix.",
+      errorDesc:
+        "We encountered an unexpected error. Our team has been notified and is working on a fix.",
       tryAgain: "Try Again",
       goHome: "Go Home",
       notFound: "Page Not Found",
-      notFoundDesc: "The page you're looking for doesn't exist, has been moved, or is temporarily unavailable.",
+      notFoundDesc:
+        "The page you're looking for doesn't exist, has been moved, or is temporarily unavailable.",
       browseNews: "Browse News",
       searchHint: "Looking for something specific?",
       sponsorCta: "Sponsor with Us",
+    },
+    breaking: {
+      label: "Breaking",
+    },
+    live: {
+      eyebrow: "Live",
+      title: "Latest Updates",
+      subtitle:
+        "Time-stamped pulse of what's happening right now, across India.",
+      viewAll: "See all updates",
+      pulse: "Live now",
+    },
+    categories: {
+      eyebrow: "Explore",
+      title: "Browse by Category",
+      subtitle: "Pick a beat — go deep with our reporters and explainers.",
+      stories: "stories",
+    },
+    tip: {
+      eyebrow: "Got a story?",
+      title: "Tip the newsroom — anonymously.",
+      subtitle:
+        "News Pinch is built on ground-level reporting and community voices. Injustice, corruption, untold struggles — if it deserves a wider audience, send it our way. We will investigate.",
+      badgeSecure: "Confidential & secure",
+      badgeProfessional: "Professional investigation",
+      badgeVoice: "Your voice matters",
+      ctaPrimary: "Share your story",
+      ctaSecondary: "Tip the newsroom",
+    },
+    videos: {
+      eyebrow: "Watch",
+      title: "Latest video reports",
+      subtitle: "Ground reporting from across India — explained on camera.",
+      viewAll: "See all video reports",
+      views: "views",
+      featured: "Featured documentary",
+      page: {
+        title: "Video Reports",
+        subtitle:
+          "Documentaries, explainers and ground reports from the News Pinch newsroom.",
+      },
+    },
+    trending: {
+      eyebrow: "Trending now",
+      title: "What India is reading",
+    },
+    dateBar: {
+      tagline: "Ground-First. Neutral. Neighborhoods to Nation.",
     },
   },
   hi: {
@@ -151,7 +212,8 @@ export const translations = {
       line3_prefix: "द्वारा",
       line4_1: "क्रिएटर्स द्वारा",
       line4_2: "वितरित।",
-      description: "एक AI-संचालित, क्रिएटर-नेतृत्व वाला न्यूज़ नेटवर्क — विश्वसनीय, तेज़, और भारत के डिजिटल प्लेटफॉर्म पर लाखों लोगों का भरोसा।",
+      description:
+        "एक AI-संचालित, क्रिएटर-नेतृत्व वाला न्यूज़ नेटवर्क — विश्वसनीय, तेज़, और भारत के डिजिटल प्लेटफॉर्म पर लाखों लोगों का भरोसा।",
       cta1: "ताज़ा खबरें पढ़ें",
       cta2: "हमारे साथ जुड़ें",
       foundedBy: "संस्थापक",
@@ -180,7 +242,8 @@ export const translations = {
     },
     newsletter: {
       title: "जानकारी में रहें, आगे रहें",
-      description: "हर सुबह अपने इनबॉक्स में शीर्ष खबरें पाएं। कोई स्पैम नहीं, सिर्फ विश्वसनीय खबरें।",
+      description:
+        "हर सुबह अपने इनबॉक्स में शीर्ष खबरें पाएं। कोई स्पैम नहीं, सिर्फ विश्वसनीय खबरें।",
       placeholder: "अपना ईमेल दर्ज करें",
       subscribe: "सदस्यता लें",
       subscribers: "50,000+ सदस्यों से जुड़ें। कभी भी अनसब्सक्राइब करें।",
@@ -189,7 +252,8 @@ export const translations = {
     },
     sponsors: {
       title: "के साथ भागीदारी क्यों",
-      subtitle: "क्रिएटर-नेतृत्व वाली, AI-संचालित पत्रकारिता के माध्यम से लाखों भारतीयों तक पहुंचें।",
+      subtitle:
+        "क्रिएटर-नेतृत्व वाली, AI-संचालित पत्रकारिता के माध्यम से लाखों भारतीयों तक पहुंचें।",
       packages: "प्रायोजन पैकेज",
       packagesDesc: "अपने ब्रांड लक्ष्यों और बजट के अनुसार पैकेज चुनें।",
       getStarted: "शुरू करें",
@@ -200,7 +264,8 @@ export const translations = {
     team: {
       title: "मिलिए",
       titleHighlight: "टीम से",
-      subtitle: "हम पत्रकार, क्रिएटर और टेक्नोलॉजिस्ट हैं जो डिजिटल-फर्स्ट भारत के लिए न्यूज़ को फिर से बना रहे हैं।",
+      subtitle:
+        "हम पत्रकार, क्रिएटर और टेक्नोलॉजिस्ट हैं जो डिजिटल-फर्स्ट भारत के लिए न्यूज़ को फिर से बना रहे हैं।",
       founders: "संस्थापक",
       whyJoin: "आपको क्यों",
       joinHighlight: "जुड़ना चाहिए",
@@ -211,7 +276,8 @@ export const translations = {
     community: {
       title: "हमारा",
       titleHighlight: "समुदाय",
-      subtitle: "लाखों दर्शक विश्वसनीय, AI-संचालित, क्रिएटर-नेतृत्व वाली पत्रकारिता के लिए न्यूज़ पिंच पर भरोसा करते हैं।",
+      subtitle:
+        "लाखों दर्शक विश्वसनीय, AI-संचालित, क्रिएटर-नेतृत्व वाली पत्रकारिता के लिए न्यूज़ पिंच पर भरोसा करते हैं।",
       mapTitle: "पूरे भारत में दर्शक पहुंच",
       mapHint: "राज्यों पर होवर करके एंगेजमेंट देखें",
       socialTitle: "हमें फॉलो करें",
@@ -224,21 +290,26 @@ export const translations = {
     trust: {
       title: "विश्वास और",
       titleHighlight: "मानक",
-      subtitle: "हर कहानी में सटीकता, निष्पक्षता और पारदर्शिता के प्रति हमारी प्रतिबद्धता।",
+      subtitle:
+        "हर कहानी में सटीकता, निष्पक्षता और पारदर्शिता के प्रति हमारी प्रतिबद्धता।",
       aiBadge: "AI द्वारा सहायता प्राप्त। संपादकों द्वारा सत्यापित।",
       aiPolicy: "हमारी",
       aiPolicyHighlight: "AI उपयोग नीति",
       corrections: "सार्वजनिक सुधार लॉग",
-      correctionsDesc: "पारदर्शिता ही जवाबदेही है। यहां हमारे हालिया सुधार हैं।",
+      correctionsDesc:
+        "पारदर्शिता ही जवाबदेही है। यहां हमारे हालिया सुधार हैं।",
     },
     contact: {
       title: "संपर्क",
       titleHighlight: "करें",
-      subtitle: "कोई स्टोरी टिप है, टीम से जुड़ना चाहते हैं, या पार्टनरशिप में रुचि है? हम आपसे सुनना चाहेंगे।",
+      subtitle:
+        "कोई स्टोरी टिप है, टीम से जुड़ना चाहते हैं, या पार्टनरशिप में रुचि है? हम आपसे सुनना चाहेंगे।",
       storyTitle: "कोई दिलचस्प कहानी है?",
-      storyDesc: "अगर आपके पास कोई ऐसी कहानी है जो सुनी जानी चाहिए, तो अपना आइडिया शेयर करें।",
+      storyDesc:
+        "अगर आपके पास कोई ऐसी कहानी है जो सुनी जानी चाहिए, तो अपना आइडिया शेयर करें।",
       joinTitle: "टीम से जुड़ना चाहते हैं?",
-      joinDesc: "हम पत्रकार, क्रिएटर और टेक्नोलॉजिस्ट हैं जो डिजिटल-फर्स्ट भारत के लिए न्यूज़ को फिर से बना रहे हैं।",
+      joinDesc:
+        "हम पत्रकार, क्रिएटर और टेक्नोलॉजिस्ट हैं जो डिजिटल-फर्स्ट भारत के लिए न्यूज़ को फिर से बना रहे हैं।",
       workWithUs: "हमारे साथ काम करें",
       submitPitch: "स्टोरी पिच भेजें",
       infoTitle: "संपर्क",
@@ -254,14 +325,64 @@ export const translations = {
     common: {
       loading: "लोड हो रहा है",
       error: "कुछ गलत हो गया",
-      errorDesc: "एक अप्रत्याशित त्रुटि हुई। हमारी टीम को सूचित कर दिया गया है।",
+      errorDesc:
+        "एक अप्रत्याशित त्रुटि हुई। हमारी टीम को सूचित कर दिया गया है।",
       tryAgain: "फिर कोशिश करें",
       goHome: "होम जाएं",
       notFound: "पेज नहीं मिला",
-      notFoundDesc: "आप जो पेज ढूंढ रहे हैं वह मौजूद नहीं है या हटा दिया गया है।",
+      notFoundDesc:
+        "आप जो पेज ढूंढ रहे हैं वह मौजूद नहीं है या हटा दिया गया है।",
       browseNews: "खबरें देखें",
       searchHint: "कुछ विशेष खोज रहे हैं?",
       sponsorCta: "प्रायोजक बनें",
+    },
+    breaking: {
+      label: "ब्रेकिंग",
+    },
+    live: {
+      eyebrow: "लाइव",
+      title: "ताज़ा अपडेट",
+      subtitle: "देश भर से अभी क्या हो रहा है — समय-चिह्नित लाइव अपडेट।",
+      viewAll: "सभी अपडेट देखें",
+      pulse: "लाइव",
+    },
+    categories: {
+      eyebrow: "खोजें",
+      title: "श्रेणी से ब्राउज़ करें",
+      subtitle:
+        "अपनी पसंद का बीट चुनें — हमारे रिपोर्टर्स के साथ गहराई तक जाएँ।",
+      stories: "कहानियाँ",
+    },
+    tip: {
+      eyebrow: "आपके पास कहानी है?",
+      title: "न्यूज़रूम को टिप दें — गुमनाम रहकर।",
+      subtitle:
+        "News Pinch ज़मीनी रिपोर्टिंग और समुदाय की आवाज़ों पर बना है। अन्याय, भ्रष्टाचार, अनकही संघर्ष — अगर वो और लोगों तक पहुँचनी चाहिए, तो हमें बताएँ। हम जाँच करेंगे।",
+      badgeSecure: "गोपनीय और सुरक्षित",
+      badgeProfessional: "पेशेवर जाँच",
+      badgeVoice: "आपकी आवाज़ मायने रखती है",
+      ctaPrimary: "अपनी कहानी साझा करें",
+      ctaSecondary: "न्यूज़रूम को टिप दें",
+    },
+    videos: {
+      eyebrow: "देखें",
+      title: "नवीनतम वीडियो रिपोर्ट",
+      subtitle: "पूरे भारत से ज़मीनी रिपोर्टिंग — कैमरे पर समझाई गई।",
+      viewAll: "सभी वीडियो देखें",
+      views: "व्यूज़",
+      featured: "फीचर्ड डॉक्यूमेंट्री",
+      page: {
+        title: "वीडियो रिपोर्ट",
+        subtitle:
+          "News Pinch न्यूज़रूम से डॉक्यूमेंट्रीज़, एक्सप्लेनर्स और ज़मीनी रिपोर्ट्स।",
+      },
+    },
+    trending: {
+      eyebrow: "ट्रेंडिंग",
+      title: "भारत क्या पढ़ रहा है",
+    },
+    dateBar: {
+      tagline: "ज़मीन से। निष्पक्ष। मोहल्ले से राष्ट्र तक।",
     },
   },
 } as const;

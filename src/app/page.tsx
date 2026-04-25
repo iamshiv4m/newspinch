@@ -1,15 +1,23 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Sparkles, TrendingUp, Users, Eye, ChevronRight } from "lucide-react";
+import { Sparkles, Eye, Users, TrendingUp, ChevronRight } from "lucide-react";
 import { ArticleThumbnail } from "@/components/article-thumbnail";
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
 import { articles, categories } from "@/lib/data";
 import { NewsletterInline } from "@/components/newsletter-inline";
-import { cn } from "@/lib/utils";
 import { HeroSection } from "@/components/hero-section";
-import { Reveal, StaggerChildren, StaggerItem, CountUp, ScaleOnScroll } from "@/components/animations";
+import { LiveUpdates } from "@/components/live-updates";
+import { CategoryGrid } from "@/components/category-grid";
+import { TipNewsroom } from "@/components/tip-newsroom";
+import { VideoSection } from "@/components/video-section";
+import { TrendingStrip } from "@/components/trending-strip";
+import {
+  Reveal,
+  StaggerChildren,
+  StaggerItem,
+  CountUp,
+  ScaleOnScroll,
+} from "@/components/animations";
 
 export default function HomePage() {
   const featuredArticle = articles[0];
@@ -33,7 +41,11 @@ export default function HomePage() {
             </span>
             <div className="h-4 w-px bg-np-gray-300 shrink-0" />
             {categories.map((cat) => (
-              <Link key={cat.slug} href={`/news/${cat.slug}`} className="shrink-0 text-sm font-medium text-np-gray-500 hover:text-np-blue transition-colors whitespace-nowrap">
+              <Link
+                key={cat.slug}
+                href={`/news/${cat.slug}`}
+                className="shrink-0 text-sm font-medium text-np-gray-500 hover:text-np-blue transition-colors whitespace-nowrap"
+              >
                 {cat.name}
               </Link>
             ))}
@@ -42,58 +54,102 @@ export default function HomePage() {
       </div>
 
       {/* ===== SECTION 2: Top Stories ===== */}
-      <section className="story-section flex flex-col justify-center bg-white">
+      <section className="flex flex-col justify-center bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full py-16">
           <Reveal>
             <div className="flex items-end justify-between mb-10">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-np-red">Latest</span>
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-np-gray-900 mt-1">Top Stories</h2>
+                <span className="text-xs font-bold uppercase tracking-widest text-np-red">
+                  Latest
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-np-gray-900 mt-1">
+                  Top Stories
+                </h2>
               </div>
-              <Link href="/news" className="hidden sm:flex items-center gap-1 text-sm font-semibold text-np-blue hover:text-np-blue-light transition-colors group">
-                View All <ChevronRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+              <Link
+                href="/news"
+                className="hidden sm:flex items-center gap-1 text-sm font-semibold text-np-blue hover:text-np-blue-light transition-colors group"
+              >
+                View All{" "}
+                <ChevronRight
+                  size={16}
+                  className="group-hover:translate-x-0.5 transition-transform"
+                />
               </Link>
             </div>
           </Reveal>
 
           {/* Featured */}
           <ScaleOnScroll>
-            <Link href={`/news/${featuredArticle.category.toLowerCase().replace(/\s+/g, '-')}/${featuredArticle.slug}`} className="block mb-8">
+            <Link
+              href={`/news/${featuredArticle.category.toLowerCase().replace(/\s+/g, "-")}/${featuredArticle.slug}`}
+              className="block mb-8"
+            >
               <div className="group relative rounded-2xl overflow-hidden bg-np-blue-dark h-[320px] sm:h-[400px]">
-              <div className="absolute inset-0 bg-gradient-to-t from-np-blue-dark via-np-blue-dark/60 to-transparent z-10" />
-              <ArticleThumbnail size="hero" className="absolute inset-0" />
+                <div className="absolute inset-0 bg-linear-to-t from-np-blue-dark via-np-blue-dark/60 to-transparent z-10" />
+                <ArticleThumbnail size="hero" className="absolute inset-0" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-20">
                   <div className="flex items-center gap-2 mb-3">
                     <Badge variant="category">{featuredArticle.category}</Badge>
                     {featuredArticle.aiAssisted && (
-                      <Badge variant="ai" className="bg-white/10 border-white/20 text-white"><Sparkles size={10} /> AI</Badge>
+                      <Badge
+                        variant="ai"
+                        className="bg-white/10 border-white/20 text-white"
+                      >
+                        <Sparkles size={10} /> AI
+                      </Badge>
                     )}
                   </div>
                   <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white group-hover:text-np-yellow transition-colors leading-tight max-w-2xl">
                     {featuredArticle.title}
                   </h3>
-                  <p className="mt-2 text-white/50 max-w-xl text-sm line-clamp-2">{featuredArticle.excerpt}</p>
+                  <p className="mt-2 text-white/50 max-w-xl text-sm line-clamp-2">
+                    {featuredArticle.excerpt}
+                  </p>
+                  <div className="mt-3 flex items-center gap-3 text-xs text-white/40">
+                    <span className="font-medium text-white/60">
+                      {featuredArticle.author}
+                    </span>
+                    <span className="h-0.5 w-0.5 rounded-full bg-white/30" />
+                    <span>{featuredArticle.date}</span>
+                    <span className="h-0.5 w-0.5 rounded-full bg-white/30" />
+                    <span>{featuredArticle.readTime}</span>
+                  </div>
                 </div>
               </div>
             </Link>
           </ScaleOnScroll>
 
           {/* Grid */}
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.15}>
+          <StaggerChildren
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            staggerDelay={0.15}
+          >
             {restArticles.map((article) => (
               <StaggerItem key={article.id}>
-                <Link href={`/news/${article.category.toLowerCase().replace(/\s+/g, '-')}/${article.slug}`}>
+                <Link
+                  href={`/news/${article.category.toLowerCase().replace(/\s+/g, "-")}/${article.slug}`}
+                >
                   <article className="group">
                     <ArticleThumbnail size="lg" className="rounded-xl mb-3" />
                     <div className="flex items-center gap-2 mb-1.5">
                       <Badge variant="category">{article.category}</Badge>
-                      {article.aiAssisted && <Badge variant="ai"><Sparkles size={10} /> AI</Badge>}
+                      {article.aiAssisted && (
+                        <Badge variant="ai">
+                          <Sparkles size={10} /> AI
+                        </Badge>
+                      )}
                     </div>
                     <h3 className="font-display font-bold text-base text-np-gray-900 group-hover:text-np-blue transition-colors leading-snug line-clamp-2">
                       {article.title}
                     </h3>
-                    <div className="mt-2 flex items-center justify-between text-xs text-np-gray-400">
-                      <span className="font-medium text-np-gray-500">{article.author}</span>
+                    <div className="mt-2 flex items-center gap-2 text-xs text-np-gray-400">
+                      <span className="font-medium text-np-gray-500">
+                        {article.author}
+                      </span>
+                      <span className="h-0.5 w-0.5 rounded-full bg-np-gray-300" />
+                      <span>{article.date}</span>
+                      <span className="h-0.5 w-0.5 rounded-full bg-np-gray-300" />
                       <span>{article.readTime}</span>
                     </div>
                   </article>
@@ -104,17 +160,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== SECTION 3: Stats ===== */}
+      {/* ===== Live Updates Timeline ===== */}
+      <LiveUpdates />
+
+      {/* ===== Trending Now Strip ===== */}
+      <TrendingStrip />
+
+      {/* ===== Stats ===== */}
       <section className="relative overflow-hidden bg-np-blue-dark text-white py-24 sm:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,193,7,0.08),transparent_60%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal direction="none">
-            <p className="text-center text-xs font-bold uppercase tracking-widest text-np-yellow/60 mb-12">Trusted by millions</p>
+            <p className="text-center text-xs font-bold uppercase tracking-widest text-np-yellow/60 mb-12">
+              Trusted by millions
+            </p>
           </Reveal>
-          <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center" staggerDelay={0.12}>
+          <StaggerChildren
+            className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center"
+            staggerDelay={0.12}
+          >
             {[
-              { icon: Eye, value: siteConfig.stats.views, label: "Total Views" },
-              { icon: Users, value: siteConfig.stats.community, label: "Community" },
+              {
+                icon: Eye,
+                value: siteConfig.stats.views,
+                label: "Total Views",
+              },
+              {
+                icon: Users,
+                value: siteConfig.stats.community,
+                label: "Community",
+              },
               { icon: TrendingUp, value: "50+", label: "Creators" },
               { icon: Sparkles, value: "4", label: "Platforms" },
             ].map((stat) => (
@@ -123,14 +198,25 @@ export default function HomePage() {
                 <div className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
                   <CountUp value={stat.value} />
                 </div>
-                <div className="text-xs uppercase tracking-widest text-white/30 mt-2">{stat.label}</div>
+                <div className="text-xs uppercase tracking-widest text-white/30 mt-2">
+                  {stat.label}
+                </div>
               </StaggerItem>
             ))}
           </StaggerChildren>
         </div>
       </section>
 
-      {/* ===== SECTION 4: Newsletter ===== */}
+      {/* ===== Category Explorer Grid ===== */}
+      <CategoryGrid />
+
+      {/* ===== Video Reports ===== */}
+      <VideoSection />
+
+      {/* ===== Tip the Newsroom ===== */}
+      <TipNewsroom />
+
+      {/* ===== Newsletter ===== */}
       <section className="py-16 sm:py-24 bg-np-bg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal>
