@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
+import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -53,7 +54,9 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <FloatingCTA />
       </body>
