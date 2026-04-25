@@ -81,4 +81,28 @@
     position: relative;
     overflow: hidden;
   }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-np-gray-200) 0%,
+      var(--color-np-gray-100) 40%,
+      var(--color-np-gray-200) 80%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 2s linear infinite;
+  }
 }
